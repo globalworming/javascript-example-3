@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operators</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+</head>
+<body onload="runScript(); RunTest.operators1()">
+<h1>Operators</h1>
+Some operators that are useful for numbers:
+<pre>
+<code class="language-javascript">
+console.log(1 +  1) // -> 2
+console.log(1 - 1) // -> 0
+console.log(7 * 2) // -> 15
+console.log(7 / 2) // -> 3.5
+console.log(7 % 2) // -> 1
+</code>
+</pre>
+All these have shorthands for calculation and assignment
+<pre>
+<code class="language-javascript">
+const kickDamage = 10
+let health = 100
+health -= kickdamage // same as health = health - kickdamage
+console.log(health) // -> 90
+</code>
+</pre>
+
+<h3>Your Task:</h3>
+<span>edit the script block of this file, add or remove things so max 99 willpower are needed</span><br>
+<h3>Willpower needed today: <span id="willpower"></span></h3>
+<pre class="error"></pre>
+
+<script type="application/javascript">
+    const runScript = () => {
+        let todaysWillpowerNeeded = 0
+        // some things need willpower
+        const cleaning = 70;
+        const work = 30;
+        const exercising = 40;
+        // some things reduce willpower needed
+        const tee = -10;
+        const sweets = -5
+
+
+        todaysWillpowerNeeded += cleaning
+        todaysWillpowerNeeded += work
+        todaysWillpowerNeeded += exercising
+        todaysWillpowerNeeded += tee * 2
+        todaysWillpowerNeeded += sweets * 2
+
+        document.getElementById("willpower").textContent = todaysWillpowerNeeded + ""
+    };
+
+</script>
+<script src="test.js"></script>
+
+<div id="displayOnSuccess" hidden="hidden">
+    <a href="./operators2.html">next exercise</a>
+</div>
+
+<!-- fancy code highlighting -->
+<script>hljs.highlightAll();</script>
+</body>
+</html>

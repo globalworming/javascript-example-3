@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operators</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+</head>
+<body onload="runScript(); RunTest.operators2()">
+<h1>Operators</h1>
+Boolean Operators, working with "true" and "false"
+<pre>
+comparisons, "===" also checks the type
+<code class="language-javascript">
+console.log(1 > 2) // -> false
+console.log(2 === 2) // -> true
+console.log(2 == "2") // -> true
+console.log(2 === "2") // -> false
+console.log(10 <= 1) // -> false
+</code>
+but
+<code>
+console.log("a" < "b") // -> true
+console.log("a" < "A") // -> false
+console.log("a" === "a") // -> true
+console.log(NaN === NaN) // -> false
+</code>
+</pre>
+You can also store and reassign with shorthands
+<pre>
+        <!--  FIXME you missed boolean operators && and || didn't you?
+
+<code>
+let stay = true;
+const safe = false;
+stay &&= safe;
+console.log(stay) // -> false
+</code>
+</pre>
+-->
+
+<h3>Your Task:</h3>
+<span>edit the script block of this file, change the comparison operations to make sure we eat pizza today</span><br>
+<h3>eat pizza today? <span id="eat"></span></h3>
+<pre class="error"></pre>
+
+<script type="application/javascript">
+    const runScript = () => {
+        const hungry = false
+        const money = 0
+        let eatPizza = hungry && (money >= 10)
+        document.getElementById("eat").textContent = eatPizza ? "yes" : "no"
+    };
+
+</script>
+<script src="test.js"></script>
+
+<div id="displayOnSuccess" hidden="hidden">
+    <a href="./operators3.html">next exercise</a>
+</div>
+
+<!-- fancy code highlighting -->
+<script>hljs.highlightAll();</script>
+</body>
+</html>

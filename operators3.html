@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operators</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+</head>
+<body onload="runScript(); RunTest.operators2()">
+<h1>Operators</h1>
+Boolean negation with "!" can also have some surprising results
+<pre>
+<code class="language-javascript">
+console.log(!true) // -> false
+console.log(!false) // -> true
+console.log(!0) // -> true
+console.log(!1) // -> false
+console.log(!-1) // -> false
+console.log(!undefined) // -> true
+console.log(!null) // -> true
+console.log(![]) // -> false
+console.log(!{}) // -> false
+console.log(!" ") // -> false
+console.log(!"") // -> true
+</code>
+</pre>
+
+<h3>Your Task:</h3>
+<span>edit the script block of this file, change the comparison operations to make sure we eat pizza today</span><br>
+<h3>eat pizza today? <span id="eat"></span></h3>
+<pre class="error"></pre>
+
+<script type="application/javascript">
+    const runScript = () => {
+        let eatPizza = !!true && !![] && !!"" && !!" "
+        document.getElementById("eat").textContent = eatPizza ? "yes" : "no"
+    };
+
+</script>
+<script src="test.js"></script>
+
+<div id="displayOnSuccess" hidden="hidden">
+    <a href="./operators4.html">next exercise</a>
+</div>
+
+<!-- fancy code highlighting -->
+<script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operators</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+</head>
+<body onload="runScript(); RunTest.operators2()">
+<h1>More Boolean Fun</h1>
+Logical "OR" returns the result, so you can use it for defaulting values
+<pre>
+<code class="language-javascript">
+console.log(null || "not null") // -> "not null"
+</code>
+</pre>
+Ternary operator "?:", basically acting like an "if X then Y otherwise Z"
+<pre>
+<code class="language-javascript">
+const x = undefined
+console.log(x ? "is defined" : "is undefined") // -> "undefined"
+const luck = 888
+console.log(luck > 100 ? "much luck" : "could be better") // -> "much luck"
+</code>
+</pre>
+
+<h3>Your Task:</h3>
+<span>edit the script block of this file, change the comparison operations to make sure we eat pizza today</span><br>
+<h3>eat pizza today? <span id="eat"></span></h3>
+<pre class="error"></pre>
+
+<script type="application/javascript">
+    const runScript = () => {
+        const areYouHungry = "yes" ? "oh definitely yes!" : "not really"
+        const isLunchTime = undefined;
+        const eatPizza = isLunchTime && areYouHungry
+        document.getElementById("eat").textContent = eatPizza ? "yes" : "no"
+    };
+
+</script>
+<script src="test.js"></script>
+
+<div id="displayOnSuccess" hidden="hidden">
+    <a href="./operators4.html">FIXME, next classroom link</a>
+</div>
+
+<!-- fancy code highlighting -->
+<script>hljs.highlightAll();</script>
+</body>
+</html>
