@@ -45,7 +45,7 @@ for (let counter = 0, moreCounter = 0; counter <= 6; counter += 5, moreCounter++
         const removeAndReturnNumberOfRemaining = (i) => {
             console.log(`pineapple ${i}`)
             let element = document.getElementsByClassName("pineapple").item(0);
-            if (element !== undefined) {
+            if (!!element) {
                 element.remove()
             }
             return document.getElementsByClassName("pineapple").length

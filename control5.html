@@ -40,9 +40,11 @@ if (Math.random() < 0.5) {
 multiple conditions can be chained need to go in a block
 <pre>
 <code class="language-javascript">
-if (Math.random() < 0.5) {
+const randomNumber = Math.random()
+
+if (randomNumber < 0.5) {
     console.log("random number less than 0.5")
-} else if (Math.random() < 0.9) {
+} else if (randomNumber < 0.9) {
     console.log("less than 0.9")
 } else {
     console.log("greater or equal 0.9")
@@ -91,7 +93,7 @@ let result = array[0]?.toUpperCase()
         let element = document.getElementsByClassName("pineapple").item(-1);
         element?.remove()
 
-        if (document.getElementsByClassName("pineapple") <= 0) {
+        if (document.getElementsByClassName("pineapple").length <= 0) {
             document.getElementsByClassName("pineapple").item(0)?.remove()
         } else {
             let banana = document.createElement('span');
