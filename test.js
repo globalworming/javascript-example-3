@@ -1,12 +1,12 @@
 const RunTest =  {
-    operators1() {
+    test1() {
         setTimeout(() => {
             try {
-                let text = document.getElementById("willpower").innerText;
-                if (parseInt(text) < 100) {
+                let pineapples = document.getElementsByClassName("pineapple").length
+                if (!pineapples) {
                     document.getElementById("displayOnSuccess").hidden = false
                 } else {
-                    document.getElementsByClassName("error")[0].textContent = `test failed, expected less than 100, found ${text}`
+                    document.getElementsByClassName("error")[0].textContent = `test failed, expected no pineapples, found ${pineapples}`
                 }
             } catch (e) {
                 document.getElementsByClassName("error")[0].textContent = e.message + "\n\n" + e.stack
@@ -14,20 +14,10 @@ const RunTest =  {
             }
         }, 1000)
     },
-    operators2() {
+
+    delayedShow() {
         setTimeout(() => {
-            try {
-                let text = document.getElementById("eat").innerText;
-                if (text === "yes") {
-                    document.getElementById("displayOnSuccess").hidden = false
-                } else {
-                    document.getElementsByClassName("error")[0].textContent = `test failed, expected "yes", found ${text}`
-                }
-            } catch (e) {
-                document.getElementsByClassName("error")[0].textContent = e.message + "\n\n" + e.stack
-                throw e
-            }
+            document.getElementById("displayOnSuccess").hidden = false
         }, 1000)
     }
-
 }

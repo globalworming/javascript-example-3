@@ -10,33 +10,23 @@
 </head>
 <body onload="runScript(); RunTest.test1()">
 <h1>Loops</h1>
-Repeat things a lot, with variants how. While loops are the simplest, just repeat something as long as a provided condition is true
+basic for-loops, 1. variable initialization, 2. condition checking, 3. block execution and 4. after block execution. we did all that with while-loops too, just looks different
 <pre>
 <code class="language-javascript">
-while (true) { // endless loop, don't execute :)
-    console.log("say hi")
+for (let counter = 0; counter <= 6; counter += 1) {
+  console.log(counter);
 }
+// -> 0, 1, ..., 6
 </code>
 </pre>
-the condition is checked first, if true, the block is executed
+as usual there are fancy things you can do but normally don't, like multiple variables involved
 <pre>
 <code class="language-javascript">
-let courses = 0
-while (courses < 10) {
-    console.log("subscribe")
-    courses++
+for (let counter = 0, moreCounter = 0; counter <= 6; counter += 5, moreCounter++) {
+  console.log(counter, moreCounter);
 }
-</code>
-</pre>
-you can break out of loops early
-<pre>
-<code class="language-javascript">
-let courses = 0
-while (true) {
-    courses++
-    break
-}
-console.log(courses) // -> 1
+// -> 0 0
+// -> 5 1
 </code>
 </pre>
 
@@ -52,19 +42,27 @@ console.log(courses) // -> 1
 
 <script type="application/javascript">
     const runScript = () => {
-        let pineapples = document.getElementsByClassName("pineapple").length
-        while (pineapples) {
-            document.getElementsByClassName("pineapple").item(0).remove()
-            pineapples--
-            break
+        const removeAndReturnNumberOfRemaining = (i) => {
+            console.log(`pineapple ${i}`)
+            let element = document.getElementsByClassName("pineapple").item(0);
+            if (element !== undefined) {
+                element.remove()
+            }
+            return document.getElementsByClassName("pineapple").length
         }
+
+        for (removeAndReturnNumberOfRemaining(1); removeAndReturnNumberOfRemaining(2) < 1; removeAndReturnNumberOfRemaining(4)) {
+            removeAndReturnNumberOfRemaining(3);
+            break;
+        }
+
     };
 
 </script>
 <script src="test.js"></script>
 
 <div id="displayOnSuccess" hidden="hidden">
-    <a href="./control2.html">next exercise</a>
+    <a href="./control4.html">next exercise</a>
 </div>
 
 <!-- fancy code highlighting -->
